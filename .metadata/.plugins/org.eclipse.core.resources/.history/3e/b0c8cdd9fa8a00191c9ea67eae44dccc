@@ -10,8 +10,9 @@
 #include <stdio.h>
 typedef void (*CALLBACK_t)(void);
 class Timeout{
+	//friend class Timer;
 public:
-	Timeout();
+	Timeout(){};
 	Timeout(uint32_t interval, CALLBACK_t callback);
 	void setTimeout(uint32_t interval, CALLBACK_t callback);
 	void checkTimeout();

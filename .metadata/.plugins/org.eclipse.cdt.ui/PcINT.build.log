@@ -1,0 +1,62 @@
+13:21:11 **** Build of configuration Debug for project PcINT ****
+make all 
+Building file: ../GPIO.cpp
+Invoking: AVR C++ Compiler
+avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"GPIO.d" -MT"GPIO.o" -c -o "GPIO.o" "../GPIO.cpp"
+Finished building: ../GPIO.cpp
+ 
+Building file: ../GPIO_Port.cpp
+Invoking: AVR C++ Compiler
+avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"GPIO_Port.d" -MT"GPIO_Port.o" -c -o "GPIO_Port.o" "../GPIO_Port.cpp"
+Finished building: ../GPIO_Port.cpp
+ 
+Building file: ../Manager.cpp
+Invoking: AVR C++ Compiler
+avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"Manager.d" -MT"Manager.o" -c -o "Manager.o" "../Manager.cpp"
+In file included from ../Manager.cpp:12:0:
+/usr/lib/avr/include/util/delay.h:95:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed" [-Wcpp]
+ # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+   ^
+Finished building: ../Manager.cpp
+ 
+Building file: ../PcINT.cpp
+Invoking: AVR C++ Compiler
+avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"PcINT.d" -MT"PcINT.o" -c -o "PcINT.o" "../PcINT.cpp"
+Finished building: ../PcINT.cpp
+ 
+Building file: ../main.cpp
+Invoking: AVR C++ Compiler
+avr-g++ -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -funsigned-char -funsigned-bitfields -fno-exceptions -mmcu=atmega2560 -DF_CPU=16000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.cpp"
+Finished building: ../main.cpp
+ 
+Building target: PcINT.elf
+Invoking: AVR C++ Linker
+avr-g++ -Wl,-Map,PcINT.map,--cref -mrelax -Wl,--gc-sections -mmcu=atmega2560 -o "PcINT.elf"  ./GPIO.o ./GPIO_Port.o ./Manager.o ./PcINT.o ./main.o   
+Finished building target: PcINT.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S PcINT.elf  >"PcINT.lss"
+Finished building: PcINT.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex PcINT.elf  "PcINT.hex"
+Finished building: PcINT.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega2560 PcINT.elf
+AVR Memory Usage
+----------------
+Device: atmega2560
+
+Program:    4418 bytes (1.7% Full)
+(.text + .data + .bootloader)
+
+Data:        265 bytes (3.2% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+13:21:12 Build Finished (took 849ms)
+

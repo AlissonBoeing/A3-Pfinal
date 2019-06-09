@@ -72,13 +72,13 @@ Timer::Timer(Hertz freq): _ticks(0), _timer_base(0), _us_per_tick(0)
 	_numberOfTimeouts = 0;
 }
 
-void Timer::addTimeout(Timeout * timeouts){ //adiciona um timeout
+void Timer::addTimeout(Timeout * timeouts){
 	if(_numberOfTimeouts < 4){
 	timeout[_numberOfTimeouts] = timeouts;
 	_numberOfTimeouts =_numberOfTimeouts + 1;
 	}
 }
-void Timer::timeoutManager(){ //metodo que gerencia os timeouts
+void Timer::timeoutManager(){
 	for(uint8_t i = 0; i < 4; i++){
 			if(timeout[i]->hasEvent() and timeout[i]->isEnabled()){
 				timeout[i]->callback();
@@ -110,7 +110,7 @@ void Timer::udelay(Microseconds us)
 
 ISR(TIMER0_OVF_vect) { Timer::ovf_isr_handler(); }
 
-void Timer::ovf_isr_handler() { //handler
+void Timer::ovf_isr_handler() {
 	TCNT0  = self()->_timer_base;
 	self()->_ticks++;
 	for(uint8_t i = 0; i < 4; i++){

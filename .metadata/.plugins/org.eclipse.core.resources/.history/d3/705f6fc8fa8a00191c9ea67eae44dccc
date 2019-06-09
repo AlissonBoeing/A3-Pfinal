@@ -31,15 +31,13 @@ int main(){
 
 	sei();
 
-
-	timeout.enableTimeout();
 	timeout2.enableTimeout();
 	timeout3.enableTimeout();
-
 	t.addTimeout(&timeout);
 	t.addTimeout(&timeout2);
 	t.addTimeout(&timeout3);
-
+	timeout.disableTimeout();
+	timeout.enableTimeout();
 	while(true){
 		t.timeoutManager();
 
