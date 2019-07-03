@@ -32,7 +32,7 @@ DTMF::DTMF(GPIO * c1, GPIO * c2, GPIO * c3, GPIO * c4, GPIO *l1,
 	this->l4->set(true);
 }
 
-void DTMF::send_dtmf(uint8_t digito){
+void DTMF::send(uint8_t digito){
 	int delay = 25;
 	switch(digito){
 		case 0:
