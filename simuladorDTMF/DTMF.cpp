@@ -1,10 +1,3 @@
-/*
- * DTMF.cpp
- *
- *  Created on: 1 de jul de 2019
- *      Author: yan
- */
-
 #include "DTMF.h"
 #include "GPIO.h"
 #include <util/delay.h>
@@ -32,10 +25,10 @@ DTMF::DTMF(GPIO * c1, GPIO * c2, GPIO * c3, GPIO * c4, GPIO *l1,
 	this->l4->set(true);
 }
 
-void DTMF::send(uint8_t digito){
+void DTMF::send(char digito){
 	int delay = 25;
 	switch(digito){
-		case 0:
+		case '0':
 			l4->toggle();
 			l2->toggle();
 			_delay_ms(delay);
@@ -43,7 +36,7 @@ void DTMF::send(uint8_t digito){
 			l2->toggle();
 			break;
 
-		case 1:
+		case '1':
 			l1->toggle();
 			c1->toggle();
 			_delay_ms(delay);
@@ -51,7 +44,7 @@ void DTMF::send(uint8_t digito){
 			c1->toggle();
 			break;
 
-		case 2:
+		case '2':
 			l1->toggle();
 			c2->toggle();
 			_delay_ms(delay);
@@ -59,7 +52,7 @@ void DTMF::send(uint8_t digito){
 			c2->toggle();
 			break;
 
-		case 3:
+		case '3':
 			l1->toggle();
 			c3->toggle();
 			_delay_ms(delay);
@@ -67,7 +60,7 @@ void DTMF::send(uint8_t digito){
 			c3->toggle();
 			break;
 
-		case 4:
+		case '4':
 			l2->toggle();
 			c1->toggle();
 			_delay_ms(delay);
@@ -75,7 +68,7 @@ void DTMF::send(uint8_t digito){
 			c1->toggle();
 			break;
 
-		case 5:
+		case '5':
 			l2->toggle();
 			c2->toggle();
 			_delay_ms(delay);
@@ -83,7 +76,7 @@ void DTMF::send(uint8_t digito){
 			c2->toggle();
 			break;
 
-		case 6:
+		case '6':
 			l2->toggle();
 			c3->toggle();
 			_delay_ms(delay);
@@ -91,7 +84,7 @@ void DTMF::send(uint8_t digito){
 			c3->toggle();
 			break;
 
-		case 7:
+		case '7':
 			l3->toggle();
 			c1->toggle();
 			_delay_ms(delay);
@@ -99,7 +92,7 @@ void DTMF::send(uint8_t digito){
 			c1->toggle();
 			break;
 
-		case 8:
+		case '8':
 			l3->toggle();
 			c2->toggle();
 			_delay_ms(delay);
@@ -107,7 +100,7 @@ void DTMF::send(uint8_t digito){
 			c2->toggle();
 			break;
 
-		case 9:
+		case '9':
 			l3->toggle();
 			c3->toggle();
 			_delay_ms(delay);

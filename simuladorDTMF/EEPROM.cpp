@@ -9,7 +9,7 @@
 #include "EEPROM.h"
 
 
-uint8_t EEPROM::read(uint8_t * pos){
+char EEPROM::read(uint8_t * pos){
 	return eeprom_read_byte(pos);
 }
 

@@ -14,7 +14,7 @@ class EEPROM{
 public:
 	EEPROM(){};
 	~EEPROM(){};
-	uint8_t read(uint8_t * pos);
+	char read(uint8_t * pos);
 	void write(uint8_t * pos, uint8_t byte);
 	void write_string(uint8_t * pos, Fila<uint8_t,10> bytes);
 
